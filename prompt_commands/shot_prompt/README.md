@@ -1,38 +1,50 @@
-# How to create API Key and call with OpenAI API
+# What is Zero/One/Few shot prompt?
 
-Before we call with OpenAI API,
-We need to create API Key.
+![Screenshot 2568-03-26 at 17 10 04](https://github.com/user-attachments/assets/e1747925-bd6f-4ee6-a89f-b78567460bdc)
 
-1. Go to https://platform.openai.com/ then Sign Up.
-2. Continue the flows, The OpenAI will asking you to create First API Key.
-3. Setup Key name then tap on "Generate API Key".
-![Screenshot 2568-03-21 at 14 14 26](https://github.com/user-attachments/assets/5a4d3a6e-8fd3-42ed-8f31-9d9950985abf)
+## First we have to reuse function `get_response` from file `simple_call`
 
+![Screenshot 2568-03-26 at 17 11 50](https://github.com/user-attachments/assets/a6b72ba1-2571-4ecb-aa53-8517141c3a73)
 
-4. Then successful create API Key.
-5. You need to install library openai using `pip install openai` on your terminal.
-6. Then create some python file and copy+paste the code that provided from OpenAI then run python script.
-![Screenshot 2568-03-21 at 14 15 18](https://github.com/user-attachments/assets/7a3a8ea0-5d3c-4ad4-b12c-cbd51c4d01dd)
+### Zero-shot prompt
 
-# Here this is sample prompt for call OpenAI API
+Definition: The model is given a task without any examples.
+When to Use:
+- When the task is simple or well-known.
+- For general knowledge questions or straightforward requests.
 
-![Screenshot 2568-03-21 at 21 51 04](https://github.com/user-attachments/assets/6a1bd1ee-c1c5-4ebf-9fd3-f9ac8530f134)
+![Screenshot 2568-03-26 at 17 13 05](https://github.com/user-attachments/assets/8a845770-cfb5-409c-9b5c-f036b1b214b1)
 
-This line calls OpenAI's API using the `client.chat.completions.create` method.
+Result is
+```
+Zero shot is:  Bonjour.
+```
 
-Parameters:
+### One-shot prompt
 
-  `model="gpt-4o-mini"` → Specifies which GPT model to use.
+Definition: The model is given one example before performing the task.
+When to Use:
+- When the task is a bit complex.
+- If the model needs a small hint to understand the context.
 
-  `messages=[{"role":"user", "content":prompt}]`
-    
-  Sends a list of messages to the model.
-    
-  The message has:
-      
-  `"role": "user"` → Marks the message as coming from a user.
-      
-  `"content": prompt` → The actual user input.
-  
-  `max_tokens=100` → Limits the response to 100 tokens (words & symbols combined).
+![Screenshot 2568-03-26 at 17 13 57](https://github.com/user-attachments/assets/37c5ad3f-5fba-40c7-8c3c-7c9e664dffce)
+
+Result is
+```
+One shot is:  Merci.
+```
+
+### Few-shot prompt
+
+Definition: The model is given one example before performing the task.
+When to Use:
+- When the task is more complex or requires nuance.
+- For tasks requiring a specific style or tone.
+
+![Screenshot 2568-03-26 at 17 17 45](https://github.com/user-attachments/assets/6f3cf118-a471-451d-86dc-c0dcde8ce096)
+
+Result is
+```
+Few shot is:  À plus tard.
+```
 
