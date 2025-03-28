@@ -1,38 +1,42 @@
-# How Chain of though work?
+# How Roles work?
 
-![Screenshot 2568-03-27 at 16 21 16](https://github.com/user-attachments/assets/6dd32653-a817-4683-9e63-5b882c8e3608)
+![Screenshot 2568-03-28 at 16 43 42](https://github.com/user-attachments/assets/c6e2efbe-7521-4e23-822d-f0b313a2b1b6)
 
-## First we have to reuse function `get_response` from file `simple_call`
 
-![Screenshot 2568-03-26 at 17 11 50](https://github.com/user-attachments/assets/a6b72ba1-2571-4ecb-aa53-8517141c3a73)
+## System role
 
-Definition: A Chain-of-Thought (CoT) prompt is a prompting technique designed to encourage large language models to generate intermediate reasoning steps before arriving at a final answer. Instead of simply providing the answer, the model is guided to think step-by-step, which often leads to more accurate and reliable results, especially for complex or multi-step problems.
+Purpose: 
+- Provides instructions to the assistant.
+- Sets rules, guidelines, or specific behavior for how the assistant should respond.
+
 When to use:
-- Math Problems: Solving multi-step arithmetic or algebra problems.
-- Logic Puzzles: Reasoning through logical or verbal puzzles.
-- Coding: Debugging or writing algorithms.
-- Explanations: Providing clear and structured reasoning for complex topics.
+- When you want the assistant to behave in a specific way (e.g., act like a financial advisor or a coding tutor).
+- When you want to ensure consistent behavior across a session.
+
+
+## User role
+
+Purpose: 
+- Represents the input from the user (you or your application).
+- It’s the actual question or request the assistant needs to respond to.
+
+When to use:
+- Whenever you’re sending a message to the assistant.
+
+
+## Assistant role
+
+Purpose: 
+- Represents the assistant’s response to the user.
+
+When to use:
+- After the assistant generates a response.
+- Helpful if you’re maintaining a back-and-forth conversation.
+
 
 Result is
 ```
-Let's break down the problem step by step.
-
-1. **Determine the current age of the friend:**
-   - Your friend is currently 20 years old.
-
-2. **Calculate the current age of the friend's father:**
-   - According to the problem, the father is currently double the age of the friend.
-   - So, we calculate the father's age: 
-     [
-     text{Father's age} = 2 times text{Friend's age} = 2 times 20 = 40
-     ]
-
-3. **Find the age of the father in 10 years:**
-   - To find the father's age in 10 years, we simply add 10 years to his current age:
-     [
-     text{Father's age in 10 years} = text{Current father's age} + 10 = 40 + 10 = 50
-     ]
-
-4. **Conclusion:**
-   - In 10 years, your friend's father will be **50 years old**.
+The Louvre is approximately 2.5 miles away from the Eiffel Tower.
+The Arc de Triomphe is located at the western end of the Champs-Élysées avenue in Paris.
+Some must-see artworks at the Louvre Museum include the Mona Lisa, the Venus de Milo, and the Winged Victory of Samothrace.
 ```
