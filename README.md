@@ -14,3 +14,5 @@ _Prompt for asking the questions and provide/not provide example for guidance._
 🔹 **[Chain-of-thought prompt](https://github.com/teerayuthton/AI-Learning-Prompt/tree/main/prompt_commands/chain_of_thought/)**  
 _Asking with AI then let AI think step by step before answer the question._
 
+🔹 **[Roles of Prompt](https://github.com/teerayuthton/AI-Learning-Prompt/tree/main/prompt_commands/roles/)**  
+_How to setup Roles for provides instructions for answer the questions._
