@@ -1,10 +1,23 @@
 # What is Zero/One/Few shot prompt?
 
-![Screenshot 2568-03-26 at 17 10 04](https://github.com/user-attachments/assets/e1747925-bd6f-4ee6-a89f-b78567460bdc)
+![Screenshot 2568-04-10 at 10 54 49](https://github.com/user-attachments/assets/b3d81f81-f4aa-4b9b-b284-a8be45ef8a78)
 
-## First we have to reuse function `get_response` from file `simple_call`
+## First we have to reuse function `get_response` from package `simple_call`
 
-![Screenshot 2568-03-26 at 17 11 50](https://github.com/user-attachments/assets/a6b72ba1-2571-4ecb-aa53-8517141c3a73)
+![Screenshot 2568-04-10 at 10 43 32](https://github.com/user-attachments/assets/4ddf9b18-2e01-4a7a-bc19-d474cbf47869)
+
+We need to append path '../' back to upper path for access to package `simple_call`
+
+![Screenshot 2568-04-10 at 10 45 44](https://github.com/user-attachments/assets/948e3c4d-544a-497d-951b-80b03b1b2498)
+
+![Screenshot 2568-04-10 at 10 56 30](https://github.com/user-attachments/assets/f66cc012-6e1f-4bad-9bad-389af375d7fc)
+
+
+Then we created file `__init__.py` under finder `simple_call` for make this directory as a package `simple_call`
+Inside of `__init__.py` we will import function `get_response` for let anothers python script can call function `get_response`
+When that script import package `simple_call`
+
+![Screenshot 2568-04-10 at 10 45 22](https://github.com/user-attachments/assets/31dce9a6-ffb4-4348-9cf0-4c699c58d199)
 
 ### Zero-shot prompt
 
