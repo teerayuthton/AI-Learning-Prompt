@@ -1,10 +1,27 @@
 # How Chain of though work?
 
-![Screenshot 2568-03-27 at 16 21 16](https://github.com/user-attachments/assets/6dd32653-a817-4683-9e63-5b882c8e3608)
+![Screenshot 2568-04-10 at 10 42 08](https://github.com/user-attachments/assets/3104f45e-9bb0-4527-9c73-206ad650e3ef)
 
-## First we have to reuse function `get_response` from file `simple_call`
 
-![Screenshot 2568-03-26 at 17 11 50](https://github.com/user-attachments/assets/a6b72ba1-2571-4ecb-aa53-8517141c3a73)
+## First we have to reuse function `get_response` from package `simple_call`
+
+![Screenshot 2568-04-10 at 10 43 32](https://github.com/user-attachments/assets/4ddf9b18-2e01-4a7a-bc19-d474cbf47869)
+
+We need to append path '../' back to upper path for access to package `simple_call`
+
+![Screenshot 2568-04-10 at 10 45 44](https://github.com/user-attachments/assets/948e3c4d-544a-497d-951b-80b03b1b2498)
+
+
+![Screenshot 2568-04-10 at 10 45 01](https://github.com/user-attachments/assets/880db7eb-3d4e-41c0-b362-a7ce7e2f7794)
+
+Then we created file `__init__.py` under finder `simple_call` for make this directory as a package `simple_call`
+Inside of `__init__.py` we will import function `get_response` for let anothers python script can call function `get_response`
+When that script import package `simple_call`
+
+![Screenshot 2568-04-10 at 10 45 22](https://github.com/user-attachments/assets/31dce9a6-ffb4-4348-9cf0-4c699c58d199)
+
+
+## Chain-of-Thought (CoT)
 
 Definition: A Chain-of-Thought (CoT) prompt is a prompting technique designed to encourage large language models to generate intermediate reasoning steps before arriving at a final answer. Instead of simply providing the answer, the model is guided to think step-by-step, which often leads to more accurate and reliable results, especially for complex or multi-step problems.
 When to use:
