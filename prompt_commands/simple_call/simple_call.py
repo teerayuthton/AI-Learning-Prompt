@@ -1,8 +1,12 @@
 import os
 from openai import OpenAI
+import httpx
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(
-    api_key=OPENAI_API_KEY
+    api_key=OPENAI_API_KEY,
+    http_client=httpx.Client(verify=False),
 )
 
 def get_response(prompt):
@@ -13,6 +17,3 @@ def get_response(prompt):
             "content":prompt}],
         max_tokens=100)
     return response.choices[0].message.content
-
-response = get_response("How many r in strawberry")
-print(response)
