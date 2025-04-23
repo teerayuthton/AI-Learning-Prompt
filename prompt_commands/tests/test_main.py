@@ -4,10 +4,13 @@ from unittest.mock import patch
 
 from src.main import app  
 
+# Initializing the Test Client
 client = TestClient(app)
 
+# Replace the real OpenAI API call (client.chat.completions.create) with a mock function during this test.
 @patch("src.main.client.chat.completions.create")
 def test_generate_response_success(mock_create):
+    # Mocking the response structure like response.choices[0].message.content on return 
     mock_create.return_value.choices = [
         type("Choice", (), {"message": type("Message", (), {"content": "Test response from OpenAI"})})
     ]
