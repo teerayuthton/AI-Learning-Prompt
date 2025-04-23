@@ -3,3 +3,5 @@ httpx==0.28.1
 fastapi
 uvicorn[standard]
 pydantic
+pytest
+pytest-cov
