@@ -6,7 +6,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(
     api_key=OPENAI_API_KEY,
-    http_client=httpx.Client(verify=False),
+    http_client=httpx.Client(verify=False)
 )
 
 def get_response(prompt):
