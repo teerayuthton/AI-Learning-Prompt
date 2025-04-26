@@ -24,4 +24,4 @@ text = "Hawaii issues volcanic toxic gas alert Thursday, May 10, 2018 - 01:43 " 
 
 response = summarize_text(text)
 
-print(response)
+print(response) 
