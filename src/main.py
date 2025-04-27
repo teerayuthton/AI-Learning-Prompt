@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 # Initializes a new FastAPI instance to build a RESTful API.
 app = FastAPI()
 
-# Securely get your API key from environment variable.
+# Securely get your API key from environment variable.    
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     raise ValueError("Please set the OPENAI_API_KEY environment variable.")
