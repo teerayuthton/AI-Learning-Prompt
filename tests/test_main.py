@@ -30,3 +30,4 @@ def test_generate_response_failure(mock_create):
 def test_generate_response_invalid_request():
     response = client.post("/generate", json={})
     assert response.status_code == 422  # Validation error from FastAPI/Pydantic
+    
